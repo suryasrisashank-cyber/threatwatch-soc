@@ -1135,7 +1135,7 @@ The email includes an attachment named 'urgent_invoice_2026.pdf.exe'. Analyze th
                 "Spot double-extension executable camouflage techniques (.pdf.exe)"
             ]),
             evidence_json=json.dumps([
-                {"header": "From", "value": "\"Bank of America Billing\" <billing@bankofamer1ca-notice.com>"},
+                {"header": "From", "value": "\"ExampleBank Billing\" <billing@bankofamer1ca-notice.com>"},
                 {"header": "Return-Path", "value": "<attacker-relay@185.220.101.5>"},
                 {"header": "Received-From", "value": "185.220.101.5 (mail-sender.bulletproof-host.xyz)"},
                 {"header": "Subject", "value": "URGENT: Outstanding Overdue Invoice - Wire Required"},

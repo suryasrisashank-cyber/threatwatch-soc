@@ -54,9 +54,9 @@ export default function PhishingPage() {
         <div className="p-5 border-b border-soc-border space-y-2 text-xs font-mono-code">
           <div className="flex items-center gap-3">
             <span className="text-slate-500 w-20">FROM:</span>
-            <span className="text-slate-100 font-bold">&quot;Bank of America Corporate Billing&quot; &lt;billing@bankofamer1ca-notice.com&gt;</span>
+            <span className="text-slate-100 font-bold">&quot;ExampleBank Corporate Billing&quot; &lt;billing@examplebank-notice.com&gt;</span>
             <span className="px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 text-[10px] font-bold border border-rose-500/30">
-              ⚠️ Typosquatted Domain (&apos;1&apos; for &apos;i&apos;)
+              ⚠️ Suspicious External Lure Domain
             </span>
           </div>
 
@@ -84,8 +84,9 @@ export default function PhishingPage() {
             <div>Return-Path: &lt;attacker-relay@185.220.101.5&gt;</div>
             <div className="text-rose-400 font-bold">
               Authentication-Results: spf=fail (sender IP 185.220.101.5 is not permitted by bankofamer1ca-notice.com); dkim=none
+              Authentication-Results: spf=fail (sender IP 185.220.101.5 is not permitted by examplebank-notice.com); dkim=none
             </div>
-            <div>Message-ID: &lt;202609120912.x9823h8f@bankofamer1ca-notice.com&gt;</div>
+            <div>Message-ID: &lt;202609120912.x9823h8f@examplebank-notice.com&gt;</div>
             <div>Content-Type: multipart/mixed; boundary=&quot;boundary_section_492&quot;</div>
           </div>
         )}
@@ -101,7 +102,7 @@ export default function PhishingPage() {
           </p>
 
           <div className="p-3.5 rounded-lg bg-soc-card border border-soc-border inline-block text-xs font-mono-code text-cyan-300">
-            Link: <span className="text-slate-400 hover:text-cyan-300 cursor-not-allowed">http://bankofamer1ca-notice.com/verify-account?token=928f</span>
+            Link: <span className="text-slate-400 hover:text-cyan-300 cursor-not-allowed">http://examplebank-notice.com/verify-account?token=928f</span>
           </div>
 
           <div className="p-4 rounded-xl bg-soc-card border border-soc-border flex items-center justify-between max-w-md">
@@ -122,7 +123,7 @@ export default function PhishingPage() {
 
           <p className="text-xs text-slate-500">
             Sincerely,<br />
-            Bank of America Corporate Remittance Bureau
+            ExampleBank Corporate Remittance Bureau
           </p>
         </div>
       </div>

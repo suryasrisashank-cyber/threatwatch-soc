@@ -78,7 +78,7 @@ SentinelLab includes 7 comprehensive blue-team training laboratories. Every lab 
 - **MITRE ATT&CK**: `T1566.001 - Phishing: Spearphishing Attachment`
 - **Scenario**: An executive reported an urgent invoice email. Analyze RFC 822 email headers, evaluate SPF authentication results, check for typosquatted domains, and evaluate the attachment extension.
 - **Evidence Telemetry**:
-  - From: `"Bank of America Billing" <billing@bankofamer1ca-notice.com>`
+  - From: `"ExampleBank Billing" <billing@bankofamer1ca-notice.com>`
   - Authentication-Results: `spf=fail (sender IP 185.220.101.5 is not permitted)`
   - Attachment: `urgent_invoice_2026.pdf.exe`
 - **Questions**:
