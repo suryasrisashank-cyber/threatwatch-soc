@@ -16,29 +16,55 @@
 
 ## 📸 Live Application Screenshots & UI Showcase
 
-The following captures demonstrate SentinelLab actively running within an authorized lab environment:
+> **Tip**: Click on any screenshot below to open the **full 3200×2000 Retina 4K image** to inspect words, numbers, code, and telemetry in maximum detail.
 
-| SOC Command Center Dashboard | Simulated SIEM Log Explorer |
-| :---: | :---: |
-| ![SOC Dashboard](docs/screenshots/dashboard.png) | ![SIEM Explorer](docs/screenshots/siem.png) |
-| *Real-time metrics, live simulation events, and attack telemetry charts* | *Multi-field search across Windows, Firewall, Syslog & Web logs* |
+### 📊 1. SOC Command Center Dashboard
+[![SOC Dashboard](docs/screenshots/dashboard.png)](docs/screenshots/dashboard.png)
+*Real-time security telemetry, 8 KPI metric cards (Critical/High/Medium/Low alerts, open incidents, events processed), active simulation status, and attack telemetry curves.*
 
-| Visual Entity Investigation | Hands-On Learning Labs |
-| :---: | :---: |
-| ![Investigation Graph](docs/screenshots/investigation.png) | ![Hands-on Labs](docs/screenshots/labs.png) |
-| *Entity correlation chain (Alert → Host → User → IOC), attack timeline & analyst notebook* | *7 hands-on attack scenarios with skill matrix scoring & hints* |
+---
 
-| Windows Security & Process Telemetry | Network Reconnaissance & Port Scan Analysis |
-| :---: | :---: |
-| ![Windows Security](docs/screenshots/windows-security.png) | ![Network Analysis](docs/screenshots/network-analysis.png) |
-| *Event ID 4688 process creation tree with read-only educational Base64 inspector* | *Firewall packet drop distributions, targeted port scans, and SYN telemetry* |
+### 🔍 2. Simulated SIEM Log Explorer
+[![SIEM Explorer](docs/screenshots/siem.png)](docs/screenshots/siem.png)
+*Multi-field search across Windows Event IDs, Firewall connection drops, DNS queries, and Web access logs with parsed schema and raw syslog payload views.*
 
-| Phishing Email Triage & Header Analyzer | 7-Stage Incident Response Lifecycle |
-| :---: | :---: |
-| ![Phishing Analysis](docs/screenshots/phishing-analysis.png) | ![Incident Response](docs/screenshots/incident.png) |
-| *RFC 822 header auditing, SPF validation check, and double-extension detection* | *NIST SP 800-61 incident lifecycle with simulated containment action triggers* |
+---
 
-*(All high-resolution 1600×1000 screenshots are available in the [`docs/screenshots/`](docs/screenshots/) directory).*
+### 🕸️ 3. Visual Entity Investigation Workspace
+[![Visual Investigation](docs/screenshots/investigation.png)](docs/screenshots/investigation.png)
+*Interactive entity correlation chain (`Alert` → `Event` → `User` → `Host` → `IP` → `IOC` → `MITRE` → `Incident`), chronological attack timeline, and analyst evidence notebook.*
+
+---
+
+### 🧪 4. SOC L1 Hands-On Learning Labs
+[![Learning Labs](docs/screenshots/labs.png)](docs/screenshots/labs.png)
+*7 hands-on attack scenarios featuring Beginner, Practice, and Assessment modes with automated grading and a 10-domain Blue Team skill proficiency matrix.*
+
+---
+
+### 🛡️ 5. Windows Security & Process Telemetry
+[![Windows Security](docs/screenshots/windows-security.png)](docs/screenshots/windows-security.png)
+*Event ID 4688 parent-child process creation hierarchy (`explorer.exe` → `invoice_2026.pdf.exe` → `powershell.exe`) and read-only educational Base64 PowerShell inspector.*
+
+---
+
+### 🎣 6. Phishing Email Triage & Header Analyzer
+[![Phishing Analysis](docs/screenshots/phishing-analysis.png)](docs/screenshots/phishing-analysis.png)
+*RFC 822 header auditing, SPF authentication verification, typosquatted domain detection, and `.pdf.exe` double-extension executable camouflage.*
+
+---
+
+### 🌐 7. Network Reconnaissance & Port Scan Analysis
+[![Network Analysis](docs/screenshots/network-analysis.png)](docs/screenshots/network-analysis.png)
+*Inbound perimeter firewall drop rate tracker, targeted destination port distributions, and TCP SYN flood anomaly monitoring.*
+
+---
+
+### 🚨 8. 7-Stage NIST Incident Response Lifecycle
+[![Incident Response](docs/screenshots/incident.png)](docs/screenshots/incident.png)
+*Full NIST SP 800-61 / SANS incident handling lifecycle with containment action triggers (Host Isolation, Firewall IP Blocking, Credential Revocation).*
+
+*(All high-resolution 3200×2000 Retina screenshots are available in the [`docs/screenshots/`](docs/screenshots/) directory).*
 
 ---
 
