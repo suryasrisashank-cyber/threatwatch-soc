@@ -41,7 +41,7 @@ A safe, synthetic security operations environment for practicing hands-on defens
 
 ## 🎯 What is SentinelLab?
 
-**SentinelLab** is a portfolio-ready, hands-on SOC L1 training and incident response platform designed to simulate the day-to-day operational workflow of a Security Operations Center analyst.
+SentinelLab is a portfolio-ready SOC Tier 1 attack detection and incident response training platform.
 
 ### Why SentinelLab?
 Most cybersecurity portfolio projects present static dashboards with pre-baked charts. SentinelLab was built to demonstrate the **complete operational lifecycle** an analyst performs when triaging security incidents:
