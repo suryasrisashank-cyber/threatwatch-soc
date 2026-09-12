@@ -10,7 +10,9 @@
 [![MITRE ATT&CK](https://img.shields.io/badge/MITRE-ATT%26CK%20v14-red)](https://attack.mitre.org/)
 [![Environment](https://img.shields.io/badge/Environment-Authorized%20Lab%20Only-orange.svg)](#-safety--authorization)
 
-A safe, synthetic security operations environment for practicing hands-on defensive cybersecurity operations:
+**SentinelLab is a portfolio-ready SOC Tier 1 attack detection and incident response training platform.**
+
+Built for aspiring security analysts, students, and blue teamers, SentinelLab simulates the day-to-day operational workflow of a Security Operations Center (SOC) inside an entirely safe, offline environment. It models the complete defense lifecycle across multi-source log ingestion, rule-based threat detection, alert triage, forensic entity correlation, MITRE ATT&CK mapping, and playbook containment.
 
 **SIEM Investigation • Alert Triage • Threat Detection • IOC Analysis • MITRE ATT&CK • Incident Response**
 
@@ -21,11 +23,11 @@ A safe, synthetic security operations environment for practicing hands-on defens
 - **7 Interactive SOC Labs**: Hands-on attack investigations covering Identity, Network, Endpoint, Email, Threat Intel, Web Apps, and Infrastructure.
 - **7 Detection Rules**: In-memory rule correlation engine evaluating synthetic logs in real time.
 - **100+ Synthetic Security Events**: Realistic Windows (4624, 4625, 4688, 4740), Linux Syslog, Perimeter Firewall, DNS, and Web access logs.
+- **15 Threat Intelligence IOCs**: Cataloged malicious IPs, domains, hashes, and files with confidence ratings.
+- **5 Incident Scenarios & Playbooks**: Codified response workflows with interactive containment triggers adhering to NIST SP 800-61.
 - **Automated 0–100 Scoring**: Lab evaluation engine assessing analytical findings with hint penalties and forensic answer explanations.
 - **Real-Time Synthetic Event Simulation**: Background event generator streaming live telemetry over WebSockets.
-- **IOC Investigation**: Integrated Threat Intelligence repository cataloging malicious IPs, domains, hashes, and files with confidence ratings.
-- **MITRE ATT&CK Mapping**: Direct tactical alignment linking telemetry and alerts to ATT&CK Enterprise techniques.
-- **Incident Response Workflow**: 7-stage NIST SP 800-61 / SANS response lifecycle with interactive containment triggers.
+- **MITRE ATT&CK Mapping**: Direct tactical alignment linking telemetry and alerts to 7 ATT&CK Enterprise techniques.
 - **Investigation Timeline**: Chronological entity-correlation graph linking Alert $\rightarrow$ Event $\rightarrow$ User $\rightarrow$ Host $\rightarrow$ IP $\rightarrow$ IOC $\rightarrow$ Incident.
 - **Incident Reporting**: Dynamic post-incident debrief report compiler with executive summaries, technical root causes, and PDF/print export.
 
@@ -53,6 +55,18 @@ Most cybersecurity portfolio projects present static dashboards with pre-baked c
 5. Extracting and validating Indicators of Compromise (IOCs).
 6. Executing containment procedures (Host Quarantine, IP Blocking, Credential Revocation).
 7. Producing formal incident debrief documentation for technical teams and leadership.
+
+---
+
+## 🎬 80-Second Recruiter Video Walkthrough
+
+> **[Watch 80-Second Video Demonstration](#)** *(or see local recording placeholder: [`docs/demo/sentinellab-demo.mp4`](docs/demo/README.md))*
+> 
+> - **Second-by-Second Script & Narration**: [**docs/demo/RECRUITER-DEMO.md**](docs/demo/RECRUITER-DEMO.md)
+> - **Pre-Flight Recording Checklist**: [**docs/demo/RECORDING-CHECKLIST.md**](docs/demo/RECORDING-CHECKLIST.md)
+> - **Complete Technical Walkthrough**: [**docs/PROJECT-WALKTHROUGH.md**](docs/PROJECT-WALKTHROUGH.md)
+> - **Engineering Case Study**: [**docs/PROJECT-CASE-STUDY.md**](docs/PROJECT-CASE-STUDY.md)
+> - **SOC L1 Interview Preparation Guide**: [**docs/interview/SOC-L1-INTERVIEW-GUIDE.md**](docs/interview/SOC-L1-INTERVIEW-GUIDE.md)
 
 ---
 
@@ -111,9 +125,9 @@ SentinelLab incorporates 7 modular defensive detection rules evaluating incoming
 | `RULE-NET-002` | **Port Scanning Reconnaissance** | Medium | `T1046` | $\ge 4$ firewall drop events across distinct destination ports in 60s |
 | `RULE-ENDPOINT-003` | **Obfuscated PowerShell Execution** | High | `T1059.001` | Event ID 4688 containing `-EncodedCommand`, `DownloadString`, or `IEX` |
 | `RULE-EMAIL-004` | **Phishing Email with Malicious Link** | High | `T1566.001` | Email event with SPF failure or attachment with double extension |
-| `RULE-THREAT-005` | **C2 Beaconing Activity** | Critical | `T1071.001` | Network/DNS queries to known malicious IOC domains or C2 IPs |
+| `RULE-IOC-005` | **Malware Threat Intelligence IOC Match** | Critical | `T1071.001` | Network/DNS queries to known malicious IOC domains, hashes, or C2 IPs |
 | `RULE-WEB-006` | **Web SQL Injection Attempt** | High | `T1190` | HTTP request URI containing `' OR 1=1`, `UNION SELECT`, or SQLMap agent |
-| `RULE-INFRA-007` | **Volumetric DDoS / SYN Flood** | Critical | `T1498.001` | Connection request velocity exceeding 500 packets/sec to a single target |
+| `RULE-NET-007` | **Volumetric DDoS / SYN Flood** | Critical | `T1498.001` | Connection request velocity exceeding 500 packets/sec to a single target |
 
 > Rule specifications, evidence requirements, and sample events are documented in [**docs/DETECTION-RULES.md**](docs/DETECTION-RULES.md).
 
@@ -176,6 +190,19 @@ SentinelLab implements a 7-stage incident handling lifecycle aligned with **NIST
 5. **Eradication**: Removes malicious persistence artifacts and terminates rogue processes.
 6. **Recovery**: Restores services from verified clean state, monitoring for re-infection.
 7. **Post-Incident / Lessons Learned**: Exports comprehensive debrief documentation.
+
+---
+
+## 📁 SOC Incident Case Studies
+
+Explore three comprehensive, end-to-end incident reports modeling the complete SOC triage lifecycle:
+
+1. [**Case Study 01: Targeted RDP Brute Force & Account Lockout**](docs/case-studies/01-brute-force-investigation.md)
+   - Windows Event IDs 4625, 4624, and 4740 analysis, source IP `198.51.100.23`, MITRE `T1110.001`, firewall containment.
+2. [**Case Study 02: Obfuscated PowerShell Execution & C2 Beaconing**](docs/case-studies/02-suspicious-powershell.md)
+   - Windows Event ID 4688 process creation tree, safe Base64 script de-obfuscation, C2 IP `45.33.32.156`, host quarantine.
+3. [**Case Study 03: Phishing Email Header & Malicious Dropper Triage**](docs/case-studies/03-phishing-malware-ioc.md)
+   - RFC 822 email header audit, `spf=fail`, typosquatted domain, double-extension binary `invoice_2026.pdf.exe`, SHA-256 hash matching.
 
 ---
 
