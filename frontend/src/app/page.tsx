@@ -25,11 +25,11 @@ export default function Home() {
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
-            SentinelLab — <span className="text-cyan-400">SOC L1</span> Training Platform
+            ThreatWatch — <span className="text-cyan-400">SOC L1</span> Training Platform
           </h1>
 
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl leading-relaxed">
-            A portfolio-ready, interactive cybersecurity home lab platform for students. Practice realistic alert triage, SIEM query analysis, IOC extraction, 7-stage incident response workflows, and 7 hands-on attack scenarios in an authorized safe sandbox.
+            ThreatWatch is an offline SOC Tier 1 attack detection and incident response training platform that simulates security operations safely using synthetic telemetry. Practice realistic alert triage, SIEM query analysis, IOC extraction, 7-stage incident response workflows, and 7 hands-on attack scenarios in an authorized safe sandbox.
           </p>
 
           <div className="flex flex-wrap items-center gap-3 pt-4">

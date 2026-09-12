@@ -47,7 +47,7 @@ async def websocket_simulation_endpoint(websocket: WebSocket):
         await websocket.send_json({
             "type": "connection_established",
             "status": simulation_service.get_status(),
-            "message": "Connected to SentinelLab Real-Time Security Event Stream"
+            "message": "Connected to ThreatWatch Real-Time Security Event Stream"
         })
         while True:
             # Keep connection alive; accept any client pings

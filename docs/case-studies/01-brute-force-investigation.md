@@ -11,14 +11,14 @@
 
 ## 1. Incident Summary
 
-On September 12, 2026, at 05:48 UTC, the SentinelLab automated detection engine triggered a high-severity alert (`RULE-AUTH-001`) indicating a rapid burst of failed logon attempts against the internal remote desktop jump server `SRV-RDP-GATEWAY`. Telemetry analysis revealed 45 sequential logon failures (Windows Security Event ID 4625) originating from external IP `198.51.100.23` targeting the local `administrator` account within a 3-minute window. The automated Windows Active Directory lockout policy engaged after threshold failure, preventing unauthorized access. Subsequent queries confirmed no successful authentications (Event ID 4624) occurred. The source IP was contained via an automated firewall deny rule.
+On September 12, 2026, at 05:48 UTC, the ThreatWatch automated detection engine triggered a high-severity alert (`RULE-AUTH-001`) indicating a rapid burst of failed logon attempts against the internal remote desktop jump server `SRV-RDP-GATEWAY`. Telemetry analysis revealed 45 sequential logon failures (Windows Security Event ID 4625) originating from external IP `198.51.100.23` targeting the local `administrator` account within a 3-minute window. The automated Windows Active Directory lockout policy engaged after threshold failure, preventing unauthorized access. Subsequent queries confirmed no successful authentications (Event ID 4624) occurred. The source IP was contained via an automated firewall deny rule.
 
 ---
 
 ## 2. Detection
 
 - **Detection Rule**: `RULE-AUTH-001` (`BRUTE_FORCE_DETECTION`)
-- **Trigger Logic**: The SentinelLab correlation engine monitors an in-memory sliding window of authentication telemetry. A threshold of $\ge 3$ consecutive failed logins (Event ID 4625 or Linux auth failures) from the same source IP within 300 seconds triggers a high-severity alert.
+- **Trigger Logic**: The ThreatWatch correlation engine monitors an in-memory sliding window of authentication telemetry. A threshold of $\ge 3$ consecutive failed logins (Event ID 4625 or Linux auth failures) from the same source IP within 300 seconds triggers a high-severity alert.
 - **Alert Dispatched**:
   ```json
   {
@@ -37,7 +37,7 @@ On September 12, 2026, at 05:48 UTC, the SentinelLab automated detection engine 
 
 ## 3. Initial Triage
 
-1. **Alert Acknowledgement**: Analyst acknowledged the alert in the SentinelLab Alerts dashboard (`/alerts`) and transitioned status from `New` to `Investigating`.
+1. **Alert Acknowledgement**: Analyst acknowledged the alert in the ThreatWatch Alerts dashboard (`/alerts`) and transitioned status from `New` to `Investigating`.
 2. **Scoping**: Verified whether the destination host was an external perimeter system or internal server. `SRV-RDP-GATEWAY` handles remote management sessions.
 3. **Escalation**: Due to the target being the privileged `administrator` account and the velocity exceeding 15 attempts/minute, the alert was formally escalated to Incident `INC-2026-001`.
 
@@ -45,7 +45,7 @@ On September 12, 2026, at 05:48 UTC, the SentinelLab automated detection engine 
 
 ## 4. Evidence Collected
 
-Telemetry extracted from the SentinelLab SIEM Log Explorer (`/siem`):
+Telemetry extracted from the ThreatWatch SIEM Log Explorer (`/siem`):
 
 | Timestamp (UTC) | Event ID | Source IP | Destination IP / Host | Account | Status Code / Detail |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -86,7 +86,7 @@ Raw Windows Event Log snippet:
 
 ## 6. IOC Analysis
 
-Pivot to SentinelLab Threat Intelligence Manager (`/iocs`):
+Pivot to ThreatWatch Threat Intelligence Manager (`/iocs`):
 
 | Indicator Value | Type | Confidence | Context / Notes | Action Taken |
 | :--- | :---: | :---: | :--- | :--- |
@@ -112,7 +112,7 @@ Pivot to SentinelLab Threat Intelligence Manager (`/iocs`):
 
 ## 9. Response / Containment
 
-Executed containment playbooks via SentinelLab Incident Response console (`/incidents`):
+Executed containment playbooks via ThreatWatch Incident Response console (`/incidents`):
 
 1. **Boundary Containment**: Triggered automated firewall block rule for `198.51.100.23` on perimeter gateway.
 2. **Network Access Control**: Restricted inbound RDP (port 3389) on `SRV-RDP-GATEWAY` to authorized internal management subnets (`192.168.1.0/24`) only.

@@ -15,10 +15,10 @@ async def lifespan(app: FastAPI):
     try:
         count = db.query(Event).count()
         if count == 0:
-            print("[SentinelLab] Empty database detected. Seeding initial demo SOC environment...")
+            print("[ThreatWatch] Empty database detected. Seeding initial demo SOC environment...")
             reset_and_seed_database(db)
         else:
-            print(f"[SentinelLab] Database connected with {count} existing events.")
+            print(f"[ThreatWatch] Database connected with {count} existing events.")
     finally:
         db.close()
     yield
@@ -26,7 +26,7 @@ async def lifespan(app: FastAPI):
     simulation.simulation_service.stop()
 
 app = FastAPI(
-    title="SentinelLab — SOC L1 Attack Detection & Incident Response Platform",
+    title="ThreatWatch — SOC L1 Attack Detection & Incident Response Platform",
     description="Authorized educational cybersecurity home lab platform for blue team training.",
     version="1.0.0",
     lifespan=lifespan
@@ -58,7 +58,7 @@ app.include_router(simulation.router)  # Also allows /ws/simulation and /simulat
 @app.get("/")
 def root_info():
     return {
-        "platform": "SentinelLab",
+        "platform": "ThreatWatch",
         "description": "SOC L1 Attack Detection & Incident Response Platform",
         "notice": "AUTHORIZED LAB ENVIRONMENT ONLY",
         "status": "ONLINE",

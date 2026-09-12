@@ -51,8 +51,8 @@ export default function Sidebar() {
         </div>
         <div>
           <div className="flex items-center gap-1.5">
-            <span className="font-bold text-slate-100 tracking-wide text-sm font-mono-code">SENTINEL</span>
-            <span className="text-cyan-400 font-bold text-sm tracking-wide font-mono-code">LAB</span>
+            <span className="font-bold text-slate-100 tracking-wide text-sm font-mono-code">THREAT</span>
+            <span className="text-cyan-400 font-bold text-sm tracking-wide font-mono-code">WATCH</span>
           </div>
           <p className="text-[10px] text-slate-400 tracking-wider uppercase font-semibold">SOC L1 Academy</p>
         </div>

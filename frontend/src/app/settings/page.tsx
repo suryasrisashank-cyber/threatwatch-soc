@@ -116,7 +116,7 @@ export default function SettingsPage() {
       <div>
         <h1 className="text-2xl font-black text-slate-100 tracking-tight flex items-center gap-2">
           <Settings className="w-6 h-6 text-slate-400" />
-          <span>SentinelLab Platform Settings & Controls</span>
+          <span>ThreatWatch Platform Settings & Controls</span>
         </h1>
         <p className="text-xs text-slate-400 mt-0.5">
           Configure real-time simulation speeds, inject synthetic attacks, audit database health, and reset sandbox data.

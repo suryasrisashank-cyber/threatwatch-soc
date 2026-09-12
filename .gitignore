@@ -1,5 +1,5 @@
 # ==============================================================================
-# SentinelLab — Git Ignore Configuration
+# ThreatWatch — Git Ignore Configuration
 # Prevents committing secrets, databases, dependencies, and environment files
 # ==============================================================================
 

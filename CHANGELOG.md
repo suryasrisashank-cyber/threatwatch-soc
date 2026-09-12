@@ -1,13 +1,13 @@
 # Changelog
 
-All notable changes to SentinelLab will be documented in this file.
+All notable changes to ThreatWatch will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
 ## [1.0.0] - 2026-09-12
 
-### Initial Public Release — SentinelLab Platform
+### Initial Public Release — ThreatWatch Platform
 
 #### Added
 - **Command Center Dashboard**: Real-time SOC dashboard featuring 8 metric cards, 6 interactive Recharts graphs, and a live security activity feed.

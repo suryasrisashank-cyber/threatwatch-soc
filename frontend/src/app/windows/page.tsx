@@ -116,7 +116,7 @@ export default function WindowsSecurityPage() {
         <div className="p-3 rounded-lg bg-amber-500/10 border border-amber-500/25 flex items-start gap-2.5 text-amber-300 text-xs">
           <Info className="w-4 h-4 shrink-0 mt-0.5" />
           <span>
-            <strong>Educational Safety Rule:</strong> SentinelLab only decodes and parses educational strings for detection analysis. Decoded strings are never executed on your system.
+            <strong>Educational Safety Rule:</strong> ThreatWatch only decodes and parses educational strings for detection analysis. Decoded strings are never executed on your system.
           </span>
         </div>
 

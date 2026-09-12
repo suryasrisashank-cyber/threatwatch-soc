@@ -1,15 +1,15 @@
-# SentinelLab — LinkedIn Post
+# ThreatWatch — LinkedIn Post
 
 A professional, technically grounded LinkedIn announcement highlighting key engineering decisions, SOC capabilities, and lessons learned.
 
 ---
 
 ```text
-Excited to share a project I've been working on: SentinelLab — an offline SOC Tier 1 attack detection and incident response training platform.
+Excited to share a project I've been working on: ThreatWatch — an offline SOC Tier 1 attack detection and incident response training platform.
 
 When preparing for security operations roles, I noticed a consistent challenge: enterprise SIEM platforms often require expensive cloud infrastructure, while traditional home labs demand 32GB+ of RAM to run multiple virtual machines. Most junior portfolio projects end up being static dashboards with pre-baked charts that don't demonstrate real analyst investigation workflows.
 
-I built SentinelLab to provide a lightweight, deterministic, and instant-start security operations environment that models the complete defensive lifecycle:
+I built ThreatWatch to provide a lightweight, deterministic, and instant-start security operations environment that models the complete defensive lifecycle:
 
 Key Capabilities:
 • Multi-Source Telemetry: Simulates realistic Windows Security Event Logs (Event IDs 4624, 4625, 4688, 4740), perimeter firewall drops, DNS queries, and email gateway logs.
@@ -24,7 +24,7 @@ Tech Stack:
 • Backend: FastAPI, Python 3.11+, Uvicorn, WebSockets
 • Database: SQLite with SQLAlchemy ORM
 
-Building SentinelLab gave me deep appreciation for detection engineering nuances—specifically sliding-window time thresholds, alert deduplication, and the importance of clear entity correlation during high-pressure triage.
+Building ThreatWatch gave me deep appreciation for detection engineering nuances—specifically sliding-window time thresholds, alert deduplication, and the importance of clear entity correlation during high-pressure triage.
 
 The project runs completely locally with zero external cloud dependencies or real attack traffic.
 

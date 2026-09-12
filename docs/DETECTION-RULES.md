@@ -1,13 +1,13 @@
-# SentinelLab — Defensive Detection Rules Reference
+# ThreatWatch — Defensive Detection Rules Reference
 
 > **AUTHORIZED LAB ENVIRONMENT ONLY**  
-> All detection rules evaluate synthetic security logs within the SentinelLab engine.
+> All detection rules evaluate synthetic security logs within the ThreatWatch engine.
 
 ---
 
 ## Detection Engine Overview
 
-The SentinelLab Detection Engine continuously correlates incoming telemetry against an in-memory sliding window of the last 20 events. When an event pattern satisfies a rule condition, a prioritized alert is generated and dispatched via WebSockets.
+The ThreatWatch Detection Engine continuously correlates incoming telemetry against an in-memory sliding window of the last 20 events. When an event pattern satisfies a rule condition, a prioritized alert is generated and dispatched via WebSockets.
 
 ---
 

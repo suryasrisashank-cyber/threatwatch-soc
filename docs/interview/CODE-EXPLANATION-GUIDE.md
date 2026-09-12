@@ -1,6 +1,6 @@
-# SentinelLab — "Explain My Code" Architectural & Codebase Guide
+# ThreatWatch — "Explain My Code" Architectural & Codebase Guide
 
-A deep-dive technical reference guide explaining the core source code files of **SentinelLab**. Use this document before technical interviews to speak with absolute clarity and authority about how your application is built and why specific architectural decisions were made.
+A deep-dive technical reference guide explaining the core source code files of **ThreatWatch**. Use this document before technical interviews to speak with absolute clarity and authority about how your application is built and why specific architectural decisions were made.
 
 ---
 

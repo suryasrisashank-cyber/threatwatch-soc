@@ -50,7 +50,7 @@ class ReportService:
 
         title = custom_title or f"Incident Investigation Report: {incident.title}"
         exec_summary = (
-            f"On {incident.created_at.strftime('%B %d, %Y')}, the SentinelLab Security Operations Center "
+            f"On {incident.created_at.strftime('%B %d, %Y')}, the ThreatWatch Security Operations Center "
             f"triaged and contained a {incident.severity} severity security incident: '{incident.title}'. "
             f"Current status: {incident.status} (Stage: {incident.stage}). "
             f"{incident.summary}"

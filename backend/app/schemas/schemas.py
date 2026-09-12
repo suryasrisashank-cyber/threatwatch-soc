@@ -94,7 +94,7 @@ class IOCBase(BaseModel):
     value: str
     ioc_type: str
     confidence: int = 85
-    source: str = "SentinelLab Detection Engine"
+    source: str = "ThreatWatch Detection Engine"
     related_incident_id: Optional[int] = None
     notes: Optional[str] = ""
 

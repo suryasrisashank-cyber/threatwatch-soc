@@ -1,6 +1,6 @@
-# SentinelLab Screenshots Directory
+# ThreatWatch Screenshots Directory
 
-High-resolution live captures and UI showcase from SentinelLab running in the authorized lab environment:
+High-resolution live captures and UI showcase from ThreatWatch running in the authorized lab environment:
 
 ### Live Application Captures
 - `investigation.jpg` — Visual Investigation Workspace with entity correlation chain, timeline, and analyst notebook.

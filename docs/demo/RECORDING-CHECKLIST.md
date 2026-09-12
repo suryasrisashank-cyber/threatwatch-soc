@@ -1,4 +1,4 @@
-# SentinelLab — Screen Recording & Privacy Checklist
+# ThreatWatch — Screen Recording & Privacy Checklist
 
 Follow this pre-flight checklist before capturing video demonstrations for recruiters, GitHub, or LinkedIn.
 
@@ -67,4 +67,4 @@ Follow this pre-flight checklist before capturing video demonstrations for recru
 3. **Hotkeys**:
    - `F9`: Start/Stop Recording.
    - `F10`: Pause/Resume Recording.
-4. **Output Destination**: Save raw video file to `docs/demo/sentinellab-demo.mp4`.
+4. **Output Destination**: Save raw video file to `docs/demo/threatwatch-demo.mp4`.

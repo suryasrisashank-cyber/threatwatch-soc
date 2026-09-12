@@ -73,7 +73,7 @@ export default function IOCsPage() {
   };
 
   const handleDeleteIOC = async (id: number) => {
-    if (!confirm("Remove this indicator from SentinelLab threat intel database?")) return;
+    if (!confirm("Remove this indicator from ThreatWatch threat intel database?")) return;
     try {
       await api.deleteIOC(id);
       await fetchIOCs();

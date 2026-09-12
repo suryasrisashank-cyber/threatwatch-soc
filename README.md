@@ -1,4 +1,4 @@
-# SentinelLab
+# ThreatWatch
 
 ## SOC L1 Training & Incident Response Platform
 
@@ -10,9 +10,9 @@
 [![MITRE ATT&CK](https://img.shields.io/badge/MITRE-ATT%26CK%20v14-red)](https://attack.mitre.org/)
 [![Environment](https://img.shields.io/badge/Environment-Authorized%20Lab%20Only-orange.svg)](#-safety--authorization)
 
-**SentinelLab is a portfolio-ready SOC Tier 1 attack detection and incident response training platform.**
+**ThreatWatch is an offline SOC Tier 1 attack detection and incident response training platform designed for cybersecurity learning, detection engineering practice, alert triage, investigation, and incident response.**
 
-Built for aspiring security analysts, students, and blue teamers, SentinelLab simulates the day-to-day operational workflow of a Security Operations Center (SOC) inside an entirely safe, offline environment. It models the complete defense lifecycle across multi-source log ingestion, rule-based threat detection, alert triage, forensic entity correlation, MITRE ATT&CK mapping, and playbook containment.
+Built for aspiring security analysts, students, and blue teamers, ThreatWatch simulates the day-to-day operational workflow of a Security Operations Center (SOC) inside an entirely safe, offline environment. It models the complete defense lifecycle across multi-source log ingestion, rule-based threat detection, alert triage, forensic entity correlation, MITRE ATT&CK mapping, and playbook containment.
 
 **SIEM Investigation • Alert Triage • Threat Detection • IOC Analysis • MITRE ATT&CK • Incident Response**
 
@@ -37,16 +37,16 @@ Built for aspiring security analysts, students, and blue teamers, SentinelLab si
 
 > ### AUTHORIZED LAB ENVIRONMENT ONLY
 > **All security events, attacks, IPs, users, hosts, and indicators are synthetic or simulated for educational purposes.**  
-> SentinelLab does not perform attacks against real systems. All simulated activity (brute force, port scanning, obfuscated PowerShell, spearphishing, malware IOCs, SQL injection, and volumetric DDoS) executes strictly against synthetic log stores and isolated mock services. Fictional entities and reserved documentation IP ranges (RFC 5737 / RFC 3849) are used throughout.
+> ThreatWatch does not perform attacks against real systems. All simulated activity (brute force, port scanning, obfuscated PowerShell, spearphishing, malware IOCs, SQL injection, and volumetric DDoS) executes strictly against synthetic log stores and isolated mock services. Fictional entities and reserved documentation IP ranges (RFC 5737 / RFC 3849) are used throughout.
 
 ---
 
-## 🎯 What is SentinelLab?
+## 🎯 What is ThreatWatch?
 
-SentinelLab is a portfolio-ready SOC Tier 1 attack detection and incident response training platform.
+ThreatWatch is an offline SOC Tier 1 attack detection and incident response training platform that simulates security operations safely using synthetic telemetry.
 
-### Why SentinelLab?
-Most cybersecurity portfolio projects present static dashboards with pre-baked charts. SentinelLab was built to demonstrate the **complete operational lifecycle** an analyst performs when triaging security incidents:
+### Why ThreatWatch?
+Most cybersecurity portfolio projects present static dashboards with pre-baked charts. ThreatWatch was built to demonstrate the **complete operational lifecycle** an analyst performs when triaging security incidents:
 
 1. Ingesting raw multi-source telemetry in a simulated SIEM.
 2. Detecting anomalous behavior via custom detection engineering logic.
@@ -60,7 +60,7 @@ Most cybersecurity portfolio projects present static dashboards with pre-baked c
 
 ## 🎬 80-Second Recruiter Video Walkthrough
 
-> **[Watch 80-Second Video Demonstration](#)** *(or see local recording placeholder: [`docs/demo/sentinellab-demo.mp4`](docs/demo/README.md))*
+> **[Watch 80-Second Video Demonstration](#)** *(or see local recording placeholder: [`docs/demo/threatwatch-demo.mp4`](docs/demo/README.md))*
 > 
 > - **Second-by-Second Script & Narration**: [**docs/demo/RECRUITER-DEMO.md**](docs/demo/RECRUITER-DEMO.md)
 > - **Pre-Flight Recording Checklist**: [**docs/demo/RECORDING-CHECKLIST.md**](docs/demo/RECORDING-CHECKLIST.md)
@@ -117,7 +117,7 @@ Most cybersecurity portfolio projects present static dashboards with pre-baked c
 
 ## 🔎 Detection Rules
 
-SentinelLab incorporates 7 modular defensive detection rules evaluating incoming telemetry:
+ThreatWatch incorporates 7 modular defensive detection rules evaluating incoming telemetry:
 
 | Rule ID | Rule Name | Severity | MITRE ID | Detection Criteria |
 | :--- | :--- | :---: | :---: | :--- |
@@ -135,7 +135,7 @@ SentinelLab incorporates 7 modular defensive detection rules evaluating incoming
 
 ## 🔬 Investigation Workflow
 
-SentinelLab models an authentic analytical investigation chain:
+ThreatWatch models an authentic analytical investigation chain:
 
 ```
 Telemetry Ingestion (Windows, Syslog, Firewall, DNS, Web)
@@ -178,7 +178,7 @@ All simulated attacks, detection rules, and learning labs map to the MITRE ATT&C
 
 ## 🚑 Incident Response
 
-SentinelLab implements a 7-stage incident handling lifecycle aligned with **NIST SP 800-61**:
+ThreatWatch implements a 7-stage incident handling lifecycle aligned with **NIST SP 800-61**:
 
 1. **Detection**: Automated rule flags anomaly; alert created.
 2. **Triage**: Analyst validates signal, verifies false positive status, assigns severity.
@@ -278,7 +278,7 @@ Incident Report (Markdown / Printable PDF Export)
 
 A full 75-second walkthrough demonstrating live telemetry ingestion, alert generation, SIEM exploration, entity correlation, containment execution, and incident report generation:
 
-> **Video Location**: `docs/demo/sentinellab-demo.mp4` *(Upload your recorded MP4 to this path)*
+> **Video Location**: `docs/demo/threatwatch-demo.mp4` *(Upload your recorded MP4 to this path)*
 
 - For step-by-step recording instructions, see [**docs/demo/README.md**](docs/demo/README.md).
 - For the second-by-second presentation timeline, see [**docs/demo/DEMO-SCRIPT.md**](docs/demo/DEMO-SCRIPT.md).
@@ -408,7 +408,7 @@ Detailed SOC investigation reports detailing incident discovery, forensic triage
 
 ## 🔐 Security
 
-SentinelLab is strictly an educational tool designed for blue team defensive instruction. See [**docs/SECURITY.md**](docs/SECURITY.md) for our educational boundary policies and responsible vulnerability reporting.
+ThreatWatch is strictly an educational tool designed for blue team defensive instruction. See [**docs/SECURITY.md**](docs/SECURITY.md) for our educational boundary policies and responsible vulnerability reporting.
 
 ---
 

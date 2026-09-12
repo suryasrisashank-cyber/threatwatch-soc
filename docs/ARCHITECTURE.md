@@ -1,4 +1,4 @@
-# SentinelLab — System Architecture & Design Specification
+# ThreatWatch — System Architecture & Design Specification
 
 > **NOTICE: AUTHORIZED LAB ENVIRONMENT ONLY**  
 > All components described herein operate on synthetic security logs and safe, isolated localhost educational datasets.
@@ -7,7 +7,7 @@
 
 ## 1. High-Level Architecture
 
-SentinelLab is built on a decoupled, production-style client-server architecture designed to simulate enterprise SOC operations:
+ThreatWatch is built on a decoupled, production-style client-server architecture designed to simulate enterprise SOC operations:
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐

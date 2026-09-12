@@ -1,6 +1,6 @@
-# SentinelLab — SOC L1 Project Case Study
+# ThreatWatch — SOC L1 Project Case Study
 
-A comprehensive, engineering-focused case study documenting the design, implementation, and operational workflows of **SentinelLab** — an offline SOC Tier 1 attack detection and incident response training platform.
+A comprehensive, engineering-focused case study documenting the design, implementation, and operational workflows of **ThreatWatch** — an offline SOC Tier 1 attack detection and incident response training platform.
 
 ---
 
@@ -24,7 +24,7 @@ To design and build an open-source, deterministic, zero-cloud SOC Tier 1 simulat
 ---
 
 ## Architecture
-SentinelLab separates presentation, business logic, and persistence into three decoupled tiers:
+ThreatWatch separates presentation, business logic, and persistence into three decoupled tiers:
 
 ```text
   [Next.js 15 App Router] (React 19, TypeScript, Tailwind CSS)
@@ -46,7 +46,7 @@ SentinelLab separates presentation, business logic, and persistence into three d
 ---
 
 ## Security Scenarios Implemented
-SentinelLab simulates 5 complete incident scenarios and 7 interactive training labs:
+ThreatWatch simulates 5 complete incident scenarios and 7 interactive training labs:
 1. **RDP Brute Force & Account Lockout**: External attacker attempts dictionary password guessing against port 3389, generating Windows Security Event ID 4625 bursts and triggering Event ID 4740 (Account Lockout).
 2. **Spearphishing with Malicious Attachment**: Spoofed email from lookalike domain (`bankofamer1ca-notice.com`) failing SPF verification and delivering a double-extension dropper (`invoice_2026.pdf.exe`).
 3. **Obfuscated PowerShell Execution**: Execution of `powershell.exe` with stealth bypass flags (`-NoP -W Hidden -Exec Bypass -Enc`) and a Base64-encoded download cradle fetching external staging payloads.
@@ -93,7 +93,7 @@ Every detection rule and scenario is mapped directly to the MITRE ATT&CK Enterpr
 ---
 
 ## Incident Response & Containment
-SentinelLab models the incident lifecycle using the **NIST SP 800-61** standard:
+ThreatWatch models the incident lifecycle using the **NIST SP 800-61** standard:
 1. **Triage & Classification**: Claiming alerts, assigning analyst ownership, and verifying True Positives.
 2. **Containment Actions**: Interactive execution of containment measures:
    - *Host Quarantine*: Disconnecting network adapters to isolate endpoints.
@@ -135,13 +135,13 @@ SentinelLab models the incident lifecycle using the **NIST SP 800-61** standard:
 
 ## Limitations
 - Telemetry is generated from synthetic templates rather than live operating system kernels.
-- SentinelLab uses an in-memory rule engine rather than a distributed commercial SIEM cluster (e.g. Splunk indexers or Elasticsearch clusters).
+- ThreatWatch uses an in-memory rule engine rather than a distributed commercial SIEM cluster (e.g. Splunk indexers or Elasticsearch clusters).
 - The platform does not currently ingest logs from external physical agents or live virtual machines.
 
 ---
 
 ## Future Improvements
-- **Splunk HEC / Syslog Forwarder**: Export SentinelLab synthetic telemetry to external enterprise SIEM platforms.
+- **Splunk HEC / Syslog Forwarder**: Export ThreatWatch synthetic telemetry to external enterprise SIEM platforms.
 - **Live Windows Event Forwarding (WEF)**: Build a lightweight Windows agent to harvest real events from virtual testbeds.
 - **Threat Intelligence API Integration**: Connect IOC validation to live AbuseIPDB and VirusTotal APIs.
 - **Multi-Tenant RBAC**: Implement role-based access control with separate Student and Instructor profiles.

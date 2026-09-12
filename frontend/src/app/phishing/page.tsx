@@ -62,7 +62,7 @@ export default function PhishingPage() {
 
           <div className="flex items-center gap-3">
             <span className="text-slate-500 w-20">TO:</span>
-            <span className="text-slate-300">alex.executive@sentinellab.local</span>
+            <span className="text-slate-300">alex.executive@threatwatch.local</span>
           </div>
 
           <div className="flex items-center gap-3">
@@ -80,7 +80,7 @@ export default function PhishingPage() {
         {showHeaders && (
           <div className="p-4 bg-slate-950 border-b border-soc-border font-mono-code text-xs text-slate-300 space-y-1.5 overflow-x-auto">
             <div className="text-cyan-400 font-bold text-[11px] uppercase mb-2">RFC 822 Gateway Audit Telemetry:</div>
-            <div>Received: from mail-sender.bulletproof-host.xyz (185.220.101.5) by mail.sentinellab.local</div>
+            <div>Received: from mail-sender.bulletproof-host.xyz (185.220.101.5) by mail.threatwatch.local</div>
             <div>Return-Path: &lt;attacker-relay@185.220.101.5&gt;</div>
             <div className="text-rose-400 font-bold">
               Authentication-Results: spf=fail (sender IP 185.220.101.5 is not permitted by bankofamer1ca-notice.com); dkim=none

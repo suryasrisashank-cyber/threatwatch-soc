@@ -10,7 +10,7 @@ class IOC(Base):
     value = Column(String(255), nullable=False, index=True)
     ioc_type = Column(String(30), nullable=False, index=True)  # IP, Domain, URL, Hash, Filename, Email, Username
     confidence = Column(Integer, default=85)  # 0-100 percentage
-    source = Column(String(100), default="SentinelLab Detection Engine")
+    source = Column(String(100), default="ThreatWatch Detection Engine")
     first_seen = Column(DateTime, default=datetime.utcnow)
     last_seen = Column(DateTime, default=datetime.utcnow)
     related_incident_id = Column(Integer, ForeignKey("incidents.id", ondelete="SET NULL"), nullable=True)

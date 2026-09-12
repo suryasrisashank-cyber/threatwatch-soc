@@ -1,9 +1,9 @@
-# SentinelLab Demo Recording Guide (60–90s)
+# ThreatWatch Demo Recording Guide (60–90s)
 
-This guide details how to record a concise, high-impact **60–90 second portfolio walkthrough video** of SentinelLab for recruiters and security hiring managers.
+This guide details how to record a concise, high-impact **60–90 second portfolio walkthrough video** of ThreatWatch for recruiters and security hiring managers.
 
 > **Video Destination**: Place your finished MP4 video file at:  
-> `docs/demo/sentinellab-demo.mp4`
+> `docs/demo/threatwatch-demo.mp4`
 
 ---
 

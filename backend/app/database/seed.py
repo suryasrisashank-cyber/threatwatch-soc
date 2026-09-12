@@ -36,10 +36,10 @@ def reset_and_seed_database(db: Session):
 
     # 1. Users
     users_data = [
-        User(username="alex.analyst", email="alex.analyst@sentinellab.local", role="Lead SOC L1 Analyst"),
-        User(username="sarah.blue", email="sarah.blue@sentinellab.local", role="SOC L1 Analyst"),
-        User(username="marcus.triage", email="marcus.triage@sentinellab.local", role="Junior Incident Responder"),
-        User(username="guest.student", email="student@sentinellab.local", role="Security Student"),
+        User(username="alex.analyst", email="alex.analyst@threatwatch.local", role="Lead SOC L1 Analyst"),
+        User(username="sarah.blue", email="sarah.blue@threatwatch.local", role="SOC L1 Analyst"),
+        User(username="marcus.triage", email="marcus.triage@threatwatch.local", role="Junior Incident Responder"),
+        User(username="guest.student", email="student@threatwatch.local", role="Security Student"),
     ]
     db.add_all(users_data)
     db.commit()
@@ -1429,7 +1429,7 @@ Analyze the incoming packet rate, protocol distribution, and bandwidth saturatio
     report_sample = Report(
         incident_id=2,
         title="Executive Summary & Technical Incident Report: Phishing & Dropper Remediation",
-        executive_summary="On September 12, 2026, the SentinelLab Security Operations Center triaged and successfully contained a Critical severity spearphishing and malware incident targeting executive endpoint WORKSTATION-CEO. The endpoint was quarantined within 15 minutes of initial C2 beaconing, preventing data exfiltration.",
+        executive_summary="On September 12, 2026, the ThreatWatch Security Operations Center triaged and successfully contained a Critical severity spearphishing and malware incident targeting executive endpoint WORKSTATION-CEO. The endpoint was quarantined within 15 minutes of initial C2 beaconing, preventing data exfiltration.",
         technical_details="Root cause investigation established that an inbound spoofed email from billing@bankofamer1ca-notice.com delivered a weaponized double-extension binary invoice_2026.pdf.exe. Execution spawned an obfuscated PowerShell cradle that established TCP 443 communications with C2 IP 45.33.32.156.",
         affected_assets_json=json.dumps([
             {"type": "Host", "identifier": "WORKSTATION-CEO (192.168.1.140)", "status": "Quarantined"},
@@ -1461,4 +1461,4 @@ Analyze the incoming packet rate, protocol distribution, and bandwidth saturatio
     db.add(report_sample)
     db.commit()
 
-    print("SentinelLab database successfully initialized and seeded with 100+ events, 20+ alerts, 5 incidents, 15+ IOCs, and 7 learning labs.")
+    print("ThreatWatch database successfully initialized and seeded with 100+ events, 20+ alerts, 5 incidents, 15+ IOCs, and 7 learning labs.")

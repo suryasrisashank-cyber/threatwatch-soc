@@ -3,7 +3,7 @@ import logging
 from typing import List
 from fastapi import WebSocket
 
-logger = logging.getLogger("sentinellab.websocket")
+logger = logging.getLogger("threatwatch.websocket")
 
 class ConnectionManager:
     def __init__(self):

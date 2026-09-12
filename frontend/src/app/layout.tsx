@@ -3,8 +3,8 @@ import Sidebar from "@/components/Sidebar";
 import Navbar from "@/components/Navbar";
 
 export const metadata = {
-  title: "SentinelLab — SOC L1 Attack Detection & Incident Response Platform",
-  description: "Professional Blue Team & SOC L1 educational training laboratory.",
+  title: "ThreatWatch — SOC L1 Attack Detection & Incident Response Platform",
+  description: "ThreatWatch is an offline SOC Tier 1 attack detection and incident response training platform that simulates security operations safely using synthetic telemetry.",
 };
 
 export default function RootLayout({
@@ -23,7 +23,7 @@ export default function RootLayout({
           </main>
           <footer className="border-t border-soc-border py-4 px-6 bg-soc-panel/60 text-xs flex flex-col sm:flex-row items-center justify-between gap-2 text-slate-400">
             <div className="flex items-center gap-2">
-              <span className="font-semibold text-slate-300">SentinelLab</span>
+              <span className="font-semibold text-slate-300">ThreatWatch</span>
               <span>— SOC L1 Attack Detection & Incident Response Platform</span>
             </div>
             <div className="text-[11px] font-mono-code text-cyan-400/90 font-medium">

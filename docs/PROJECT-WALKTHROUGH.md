@@ -1,12 +1,12 @@
-# SentinelLab Project Walkthrough
+# ThreatWatch Project Walkthrough
 
-A practical, technical guide to understanding the architecture, mechanics, and design of **SentinelLab** — an offline SOC Tier 1 attack detection and incident response training platform.
+A practical, technical guide to understanding the architecture, mechanics, and design of **ThreatWatch** — an offline SOC Tier 1 attack detection and incident response training platform.
 
 ---
 
-## 1. What SentinelLab Does
+## 1. What ThreatWatch Does
 
-1. **SentinelLab** is an offline, synthetic Security Operations Center (SOC) training environment built to simulate real-world Tier 1 analyst workflows.
+1. **ThreatWatch** is an offline, synthetic Security Operations Center (SOC) training environment built to simulate real-world Tier 1 analyst workflows.
 2. It generates realistic multi-source security telemetry, including Windows Security Event Logs (4624, 4625, 4688, 4740), Linux Syslog, Perimeter Firewall denials, DNS standard queries, and Email Gateway logs.
 3. A built-in Python detection engine evaluates incoming telemetry against 7 signature and threshold rules in real time.
 4. When suspicious activity exceeds detection criteria, the system automatically fires alerts categorized by severity (Critical, High, Medium, Low).
@@ -189,7 +189,7 @@ backend/
 
 ## 5. Event Flow
 
-Here is the exact lifecycle of how an event travels through SentinelLab:
+Here is the exact lifecycle of how an event travels through ThreatWatch:
 
 ```text
 [1. Synthetic Event Generated]
@@ -254,7 +254,7 @@ The detection engine (`backend/app/services/detection_engine.py`) implements an 
 
 ## 7. Investigation Workflow
 
-In SentinelLab, an investigation is modeled as a connected relational entity graph:
+In ThreatWatch, an investigation is modeled as a connected relational entity graph:
 
 ```text
 [ALERT] (e.g. Suspicious Obfuscated PowerShell)
@@ -283,7 +283,7 @@ In SentinelLab, an investigation is modeled as a connected relational entity gra
 
 ## 8. Incident Response
 
-SentinelLab implements a 7-stage incident response lifecycle adhering to **NIST SP 800-61 Rev. 2** and **SANS Institute** guidelines:
+ThreatWatch implements a 7-stage incident response lifecycle adhering to **NIST SP 800-61 Rev. 2** and **SANS Institute** guidelines:
 
 1. **Detection**: Alert triggered by detection engine or reported by user.
 2. **Triage**: Analyst verifies True Positive vs. False Positive, assigns severity, and claims ticket.

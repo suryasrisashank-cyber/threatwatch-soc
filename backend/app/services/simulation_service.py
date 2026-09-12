@@ -9,7 +9,7 @@ from app.models.alert import Alert
 from app.services.detection_engine import detection_engine
 from app.websocket.manager import ws_manager
 
-logger = logging.getLogger("sentinellab.simulation")
+logger = logging.getLogger("threatwatch.simulation")
 
 SYNTHETIC_EVENT_POOL = [
     # Benign events
@@ -113,7 +113,7 @@ SYNTHETIC_EVENT_POOL = [
         "destination_ip": "192.168.1.25",
         "source_host": "MAIL-GATEWAY",
         "destination_host": "MAIL-CORP",
-        "username": "finance-team@sentinellab.local",
+        "username": "finance-team@threatwatch.local",
         "process": "postfix/cleanup",
         "message": "Inbound email rejected: SPF=fail, From: billing@bankofamer1ca-notice.com, Attachment: urgent_invoice_2026.pdf.exe",
         "raw_log": "Sep 12 09:12:30 mail-gw postfix[4490]: SPF check failed for 185.220.101.5; domain=bankofamer1ca-notice.com; attachment=urgent_invoice_2026.pdf.exe",

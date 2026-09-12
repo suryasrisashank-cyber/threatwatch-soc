@@ -1,4 +1,4 @@
-# SentinelLab — Complete 7 Hands-On Learning Labs Documentation
+# ThreatWatch — Complete 7 Hands-On Learning Labs Documentation
 
 > **AUTHORIZED LAB ENVIRONMENT ONLY**  
 > All lab scenarios utilize synthetic telemetry and safe localhost educational artifacts.
@@ -7,7 +7,7 @@
 
 ## Overview
 
-SentinelLab includes 7 comprehensive blue-team training laboratories. Every lab can be executed in three distinct modes:
+ThreatWatch includes 7 comprehensive blue-team training laboratories. Every lab can be executed in three distinct modes:
 - **BEGINNER**: In-depth explanations of security concepts provided alongside each challenge question.
 - **PRACTICE**: Realistic scenario prompt with hint requests available if needed.
 - **ASSESSMENT**: Timed examination without hints; answers and forensic explanations revealed after grading.

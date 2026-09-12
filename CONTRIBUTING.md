@@ -1,6 +1,6 @@
-# Contributing to SentinelLab
+# Contributing to ThreatWatch
 
-Thank you for your interest in improving **SentinelLab**! We welcome contributions from cybersecurity students, blue team professionals, and software engineers to enhance our educational lab scenarios and detection capabilities.
+Thank you for your interest in improving **ThreatWatch**! We welcome contributions from cybersecurity students, blue team professionals, and software engineers to enhance our educational lab scenarios and detection capabilities.
 
 > **CRITICAL RULE**: All contributions must strictly adhere to our [Security Policy](docs/SECURITY.md). Never submit functional malware samples, real stolen credentials, or offensive exploit scripts.
 

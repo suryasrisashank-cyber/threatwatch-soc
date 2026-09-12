@@ -1,4 +1,4 @@
-# SentinelLab — 60 to 90-Second Recruiter Demo Guide
+# ThreatWatch — 60 to 90-Second Recruiter Demo Guide
 
 A second-by-second demonstration walkthrough designed for SOC hiring managers, technical recruiters, and senior security engineers.
 
@@ -28,7 +28,7 @@ A second-by-second demonstration walkthrough designed for SOC hiring managers, t
 * **On Screen**: `http://localhost:3000/dashboard` (Full screen, 1080p).
 * **Visual Action**: Hover cursor smoothly over the telemetry cards (Total Events, Active Alerts, Open Incidents, Severity Breakdown).
 * **Narration**:
-  > *"SentinelLab is a portfolio-ready SOC Tier 1 attack detection and incident response training platform. It simulates real-world security operations inside a completely safe, offline environment."*
+  > *"ThreatWatch is a portfolio SOC Tier 1 detection and incident response platform that simulates security operations in a safe offline environment."*
 
 ---
 
@@ -86,7 +86,7 @@ A second-by-second demonstration walkthrough designed for SOC hiring managers, t
 * **On Screen**: Click **Reports** (`http://localhost:3000/reports`).
 * **Visual Action**: Scroll through the generated executive summary and technical root-cause breakdown.
 * **Narration**:
-  > *"Finally, SentinelLab compiles formal debrief reports for executive leadership. SentinelLab demonstrates the complete SOC workflow: Detect $\rightarrow$ Triage $\rightarrow$ Investigate $\rightarrow$ Correlate $\rightarrow$ Respond $\rightarrow$ Report."*
+  > *"Finally, ThreatWatch compiles formal debrief reports for executive leadership. ThreatWatch demonstrates the complete SOC workflow: Detect $\rightarrow$ Triage $\rightarrow$ Investigate $\rightarrow$ Correlate $\rightarrow$ Respond $\rightarrow$ Report."*
 
 ---
 

@@ -73,7 +73,7 @@ export default function ReportsPage() {
     if (!selectedReport) return;
     const content = `
 # ${selectedReport.title}
-**Platform:** SentinelLab — SOC L1 Incident Response Platform
+**Platform:** ThreatWatch — SOC L1 Incident Response Platform
 **Classification:** Authorized Lab Security Audit • Internal Use Only
 **Generated:** ${selectedReport.created_at}
 
@@ -200,7 +200,7 @@ ${selectedReport.conclusion}
           <div className="flex items-center justify-between pb-6 border-b border-soc-border print:border-gray-300">
             <div>
               <div className="text-lg font-black tracking-tight text-slate-100 print:text-black">
-                SENTINELLAB BLUE TEAM SOC
+                THREATWATCH BLUE TEAM SOC
               </div>
               <div className="text-[11px] text-cyan-400 print:text-gray-600 uppercase font-semibold">
                 Formal Cyber Incident Investigation & Containment Report
@@ -363,7 +363,7 @@ ${selectedReport.conclusion}
                 Lead Blue Team Analyst: <strong className="text-slate-200 print:text-black">Surya (SOC L1)</strong>
               </div>
               <div>
-                Platform Verification: <strong className="text-cyan-400 print:text-blue-800">SentinelLab Educational Enclave</strong>
+                Platform Verification: <strong className="text-cyan-400 print:text-blue-800">ThreatWatch Educational Enclave</strong>
               </div>
             </div>
           </div>

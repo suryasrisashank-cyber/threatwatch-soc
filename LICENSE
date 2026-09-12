@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 SentinelLab Contributors
+Copyright (c) 2026 ThreatWatch Contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,7 +23,7 @@ SOFTWARE.
 ---
 
 EDUCATIONAL LAB SAFETY DISCLAIMER:
-SentinelLab is intended exclusively for educational, instructional, and blue team
+ThreatWatch is intended exclusively for educational, instructional, and blue team
 defensive security training purposes. All telemetry, logs, indicators of compromise,
 and attack scenarios provided within this software are synthetic, simulated, and
 confined to local authorized lab environments. Users must never apply tools or
