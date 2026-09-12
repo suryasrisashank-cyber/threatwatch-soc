@@ -18,22 +18,27 @@
 
 The following captures demonstrate SentinelLab actively running within an authorized lab environment:
 
-| Visual Investigation Workspace | Windows Process Hierarchy & Safe PowerShell |
+| SOC Command Center Dashboard | Simulated SIEM Log Explorer |
 | :---: | :---: |
-| <img src="docs/screenshots/investigation.jpg" width="400" alt="Visual Investigation Workspace" /> | <img src="docs/screenshots/windows-security.jpg" width="400" alt="Windows Security & PowerShell Telemetry" /> |
-| *Entity correlation chain (Alert → Host → User → IOC), attack timeline & analyst notebook* | *Event ID 4688 process creation tree with read-only educational Base64 inspector* |
+| ![SOC Dashboard](docs/screenshots/dashboard.png) | ![SIEM Explorer](docs/screenshots/siem.png) |
+| *Real-time metrics, live simulation events, and attack telemetry charts* | *Multi-field search across Windows, Firewall, Syslog & Web logs* |
 
-| Phishing Email Triage & Header Analyzer | Network Reconnaissance & Port Scan Analysis |
+| Visual Entity Investigation | Hands-On Learning Labs |
 | :---: | :---: |
-| <img src="docs/screenshots/phishing-analysis.jpg" width="400" alt="Phishing Email Header Analyzer" /> | <img src="docs/screenshots/network-analysis.jpg" width="400" alt="Network Traffic & Reconnaissance" /> |
-| *RFC 822 header auditing, SPF validation check, and double-extension detection* | *Firewall packet drop distributions, targeted port scans, and SYN telemetry* |
+| ![Investigation Graph](docs/screenshots/investigation.png) | ![Hands-on Labs](docs/screenshots/labs.png) |
+| *Entity correlation chain (Alert → Host → User → IOC), attack timeline & analyst notebook* | *7 hands-on attack scenarios with skill matrix scoring & hints* |
 
-| Platform Simulation Controls & Health Status |
-| :---: |
-| <img src="docs/screenshots/settings-controls.jpg" width="500" alt="Platform Settings & Simulation Controls" /> |
-| *Real-time telemetry stream speed controls, sandbox reset, and backend engine status* |
+| Windows Security & Process Telemetry | Network Reconnaissance & Port Scan Analysis |
+| :---: | :---: |
+| ![Windows Security](docs/screenshots/windows-security.png) | ![Network Analysis](docs/screenshots/network-analysis.png) |
+| *Event ID 4688 process creation tree with read-only educational Base64 inspector* | *Firewall packet drop distributions, targeted port scans, and SYN telemetry* |
 
-*(Additional screenshots and high-resolution assets are organized in the [`docs/screenshots/`](docs/screenshots/) directory).*
+| Phishing Email Triage & Header Analyzer | 7-Stage Incident Response Lifecycle |
+| :---: | :---: |
+| ![Phishing Analysis](docs/screenshots/phishing-analysis.png) | ![Incident Response](docs/screenshots/incident.png) |
+| *RFC 822 header auditing, SPF validation check, and double-extension detection* | *NIST SP 800-61 incident lifecycle with simulated containment action triggers* |
+
+*(All high-resolution 1600×1000 screenshots are available in the [`docs/screenshots/`](docs/screenshots/) directory).*
 
 ---
 
