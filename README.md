@@ -14,24 +14,26 @@
 
 ---
 
-## 📸 Screenshots & UI Showcase
+## 📸 Live Application Screenshots & UI Showcase
 
-| SOC Command Center Dashboard | SIEM Log Explorer |
+The following captures demonstrate SentinelLab actively running within an authorized lab environment:
+
+| Visual Investigation Workspace | Windows Process Hierarchy & Safe PowerShell |
 | :---: | :---: |
-| ![SOC Dashboard](docs/screenshots/dashboard.png) | ![SIEM Explorer](docs/screenshots/siem.png) |
-| *Real-time metrics, severity distribution, and live event telemetry* | *Multi-field search across Windows, Firewall, Syslog & Web logs* |
+| <img src="docs/screenshots/investigation.jpg" width="400" alt="Visual Investigation Workspace" /> | <img src="docs/screenshots/windows-security.jpg" width="400" alt="Windows Security & PowerShell Telemetry" /> |
+| *Entity correlation chain (Alert → Host → User → IOC), attack timeline & analyst notebook* | *Event ID 4688 process creation tree with read-only educational Base64 inspector* |
 
-| Visual Entity Investigation | Interactive Learning Labs |
+| Phishing Email Triage & Header Analyzer | Network Reconnaissance & Port Scan Analysis |
 | :---: | :---: |
-| ![Investigation Graph](docs/screenshots/investigation.png) | ![Hands-on Labs](docs/screenshots/labs.png) |
-| *Node-link correlation: Alert → Event → Host → User → IOC → MITRE* | *7 hands-on attack scenarios with Beginner, Practice & Assessment modes* |
+| <img src="docs/screenshots/phishing-analysis.jpg" width="400" alt="Phishing Email Header Analyzer" /> | <img src="docs/screenshots/network-analysis.jpg" width="400" alt="Network Traffic & Reconnaissance" /> |
+| *RFC 822 header auditing, SPF validation check, and double-extension detection* | *Firewall packet drop distributions, targeted port scans, and SYN telemetry* |
 
-| Incident Response Lifecycle | Executive Debrief & PDF Report |
-| :---: | :---: |
-| ![Incident Response](docs/screenshots/incident.png) | ![Incident Report](docs/screenshots/report.png) |
-| *7-Stage NIST SP 800-61 workflow with simulated containment triggers* | *Automated post-incident reports with print and PDF export* |
+| Platform Simulation Controls & Health Status |
+| :---: |
+| <img src="docs/screenshots/settings-controls.jpg" width="500" alt="Platform Settings & Simulation Controls" /> |
+| *Real-time telemetry stream speed controls, sandbox reset, and backend engine status* |
 
-*(Screenshots can be added or updated in the [`docs/screenshots/`](docs/screenshots/) directory).*
+*(Additional screenshots and high-resolution assets are organized in the [`docs/screenshots/`](docs/screenshots/) directory).*
 
 ---
 

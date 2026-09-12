@@ -1,10 +1,17 @@
 # SentinelLab Screenshots Directory
 
-Place high-resolution screenshots here for public GitHub repository showcase:
+High-resolution live captures and UI showcase from SentinelLab running in the authorized lab environment:
 
-- `dashboard.png` — Main SOC Command Center Dashboard with metrics, charts, and activity feed.
-- `siem.png` — Simulated SIEM Log Explorer querying Windows, Firewall, and Web logs.
-- `investigation.png` — Visual Investigation Workspace with entity correlation chain and timeline.
-- `labs.png` — Hands-on Learning Lab interface with challenge questions, evidence, and scorecard.
-- `incident.png` — 7-Stage Incident Response lifecycle with containment action triggers.
-- `report.png` — Printable incident debrief report view.
+### Live Application Captures
+- `investigation.jpg` — Visual Investigation Workspace with entity correlation chain, timeline, and analyst notebook.
+- `windows-security.jpg` — Windows Event ID 4688 process hierarchy tree and safe educational PowerShell payload inspector.
+- `phishing-analysis.jpg` — Phishing Email Triage & Header Analyzer with SPF checks and double-extension detection.
+- `network-analysis.jpg` — Network Traffic & Reconnaissance Analysis with firewall packet drop charts and drop telemetry.
+- `settings-controls.jpg` — Platform settings, velocity sliders, health diagnostics, and environment reset.
+
+### Desktop UI Placeholders
+- `dashboard.png` — SOC Command Center Dashboard.
+- `siem.png` — SIEM Log Explorer.
+- `labs.png` — Interactive Learning Labs Runner.
+- `incident.png` — NIST Incident Response Lifecycle.
+- `report.png` — Post-Incident Debrief Report Export.
