@@ -29,7 +29,7 @@ Building ThreatWatch gave me deep appreciation for detection engineering nuances
 The project runs completely locally with zero external cloud dependencies or real attack traffic.
 
 Check out the project:
-GitHub: https://github.com/suryasrisashank-cyber/sentinellab
+GitHub: https://github.com/suryasrisashank-cyber/threatwatch-soc
 Demo Video / Walkthrough: [INSERT DEMO LINK HERE]
 
 Feedback and thoughts from SOC analysts, detection engineers, and blue teamers are welcome!

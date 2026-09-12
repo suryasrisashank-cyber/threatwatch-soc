@@ -16,8 +16,8 @@ Thank you for your interest in improving **ThreatWatch**! We welcome contributio
 ### Initializing the Workspace
 ```bash
 # Clone the repository
-git clone https://github.com/suryasrisashank-cyber/sentinellab.git
-cd sentinellab
+git clone https://github.com/suryasrisashank-cyber/threatwatch-soc.git
+cd threatwatch-soc
 
 # 1. Setup Backend
 cd backend

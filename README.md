@@ -330,8 +330,8 @@ npm run build
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/suryasrisashank-cyber/sentinellab.git
-cd sentinellab
+git clone https://github.com/suryasrisashank-cyber/threatwatch-soc.git
+cd threatwatch-soc
 ```
 
 ### 2. Backend Setup (Local Development Example)
@@ -428,4 +428,4 @@ Licensed under the [MIT License](LICENSE) with an explicit Educational Lab Safet
 
 **Surya Sri Sashank**  
 - GitHub: [@suryasrisashank-cyber](https://github.com/suryasrisashank-cyber)  
-- Project Repository: [https://github.com/suryasrisashank-cyber/sentinellab](https://github.com/suryasrisashank-cyber/sentinellab)
+- Project Repository: [https://github.com/suryasrisashank-cyber/threatwatch-soc](https://github.com/suryasrisashank-cyber/threatwatch-soc)
